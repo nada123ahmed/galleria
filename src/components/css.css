@@ -1,0 +1,55 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+figure {
+  position: relative;
+}
+
+.image {
+  width: 100%;
+  display: block;
+  cursor: pointer;
+  transition: all .5s;
+}
+.image:hover {
+  opacity: .8;
+}
+.image-container {
+  position: relative;
+}
+.caption {
+  position: absolute;
+  width: 100%;
+  bottom: 10%;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+.img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  position: relative;
+}
+
+.slideshow-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  padding: 2% 5%;
+  gap: 20%;
+}
+.slideshow-container div{
+  flex-basis: 50%;
+}
+.slideshow-container div:last-child{
+  padding-top: 10%;
+}
+.slideshow-container p {
+  width: 70%;
+  line-height: 1.8;
+}
