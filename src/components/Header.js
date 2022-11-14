@@ -1,11 +1,21 @@
 import React from 'react'
 import logo from '../shared/logo.svg';
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
+
+import gallery from '../data.json'
+console.log(gallery[0])
 function Header() {
+  const img = gallery[0]
+  const navigate = useNavigate();
+  const viewImage = (i) => {
+    console.log(img)
+    navigate('/slideshow',{state:{img, i}});
+
+  }
   return (
     <header>
         <Link to ='/'><img src={logo} alt="logo"></img></Link>
-        <Link to='/slideshow'>START SLIDESHOW</Link>
+        <a onClick={() => viewImage(0)} href='/slideshow'>START SLIDESHOW</a>
     </header>
   )
 }
