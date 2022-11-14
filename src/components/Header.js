@@ -9,7 +9,12 @@ function Header() {
   const navigate = useNavigate();
   const viewImage = (i) => {
     console.log(img)
-    navigate('/slideshow',{state:{img, i}});
+    navigate('/slideshow',{state: {
+      art:{img, i},
+      slide: true
+
+    }
+      });
 
   }
   return (

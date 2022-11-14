@@ -4,7 +4,10 @@ import {Link, useNavigate} from 'react-router-dom';
 function Masonry(props) {
   const navigate = useNavigate();
   const viewImage = (img, i) => {
-    navigate('/slideshow',{state:{img, i}});
+    navigate('/slideshow',{state: {
+      art:{img, i},
+      slide:false
+    } });
 
   }
   

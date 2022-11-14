@@ -1,7 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Libre Baskerville', serif;
+}
+p {
+  color: #7D7D7D;
+}
+.link {
+  text-decoration: underline;
+  color: #7D7D7D;
+  font-size: .8rem;
 }
 .button {
   cursor: pointer;
@@ -21,22 +32,37 @@ figure {
 }
 .image-container {
   position: relative;
+ 
+}
+.image-container::after {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  
 }
 .caption {
   position: absolute;
   width: 100%;
-  bottom: 10%;
+  bottom: 0;
   color: white;
-  padding: 1rem;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
-  gap: .5rem;
+  gap: .8rem;
+}
+.caption p {
+  color: white;
+  opacity: .8;
 }
 .img {
   max-width: 100%;
   max-height: 100%;
   object-fit: cover;
   position: relative;
+
+  filter:brightness(74%)
 }
 img {
   max-height: 100%;
@@ -47,7 +73,7 @@ img {
   width: 100%;
   height: 100%;
   display: flex;
-  padding: 2% 5%;
+  padding: 6rem 3rem;
   gap: 25%;
   margin-bottom: 6rem;
 }
@@ -62,9 +88,11 @@ img {
 .image-container__image {
   width: 32rem;
   display: flex;
+  position: relative;
 }
+
 .artist {
-  width: 6rem;
+  width: 7rem;
   display: flex;
   position: absolute;
   bottom: -10%;
@@ -81,10 +109,12 @@ img {
 }
 .year {
   position: absolute;
-  top: 0;
-  right: 0%;
+  top: -1rem;
+  left: 0;
   font-size: 12rem;
-  opacity: .2;
+  z-index: -1;
+  color: #F3F3F3;
+  font-weight: 700;
 }
  .slideshow-container .image-container__caption {
   padding: 0;
@@ -108,7 +138,7 @@ img {
   padding-right: 0;
 }
 .image-container .image-container__caption h2 {
-
+min-width: 22rem;
   font-size: 3.2rem
 }
 .image-container .image-container__caption p {
@@ -128,7 +158,8 @@ img {
   gap: .5rem;
 }
 .slide-name p{
-  font-size: .8rem;
+  font-size: .9rem;
+  color: black;
 }
 .controls {
   display: flex;
@@ -143,6 +174,7 @@ img {
   background-color: rgba(0, 0, 0,.7);
   padding: .9rem;
   display: flex;
+  align-items: center;
   gap: 1rem;
   left: 5%;
   bottom: 5%;
@@ -154,6 +186,8 @@ img {
 }
 .view-image span {
   color: white;
+  letter-spacing: 2px;
+  font-size: .9rem;
 }
 .overlay {
   background-color: rgba(0, 0, 0, .8);

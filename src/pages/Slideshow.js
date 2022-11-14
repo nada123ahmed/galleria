@@ -11,11 +11,13 @@ import {Link, useNavigate} from 'react-router-dom'
 function Slideshow() {
   const location = useLocation();
   let myInterval
-  const [art, setArt] = useState(location.state)
+
+  const [art, setArt] = useState(location.state.art)
   const [progress, setProgress] = useState(Math.round((art.i / (gallery.length - 1)) * 100))
   const [data, setData] = useState({img: "", i: 0})
-  const [slideshow, setSlideshow] = useState(false)
+  const [slideshow, setSlideshow] = useState(location.state.slide)
   const [index, setIndex] = useState(art.i)
+
   const viewImage = (img, i) => {
     setData({img, i})
     document.body.style.overflowY = "hidden";
@@ -56,13 +58,7 @@ function Slideshow() {
    }
   }
 
-  const slideRun = (secondsPerSlide) => {
-   
 
-    
-   
-    
-  }
  
   useEffect(() => {
     setArt({img:gallery[index], i:index})
@@ -142,7 +138,7 @@ function Slideshow() {
     <div className='description'>
       <span className='year'>{art.img.year}</span>
       <p>{art.img.description}</p>
-      <div><span className='button'>GO TO SOURCE</span></div>
+      <div><a href={art.img.source} target="_blanc" className='button link'>GO TO SOURCE</a></div>
       
     </div>
     </section>
