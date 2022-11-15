@@ -16,7 +16,7 @@ function Masonry(props) {
     
     <div className='masonry'>
     {props.imageUrls.map((img, i) => (
-      <div onClick={() => viewImage(img, i)} key={i} className="image" >
+      <div onClick={() => viewImage(img, i)} key={i} className="image">
         <div className='image-container'>
       <img className='img' src={img.images.thumbnail} alt="thumbnail"   ></img>
       <div className='caption'>
