@@ -7,7 +7,7 @@ function Gallery() {
   return (
     <>
     <Header/>
-    <Masonry imageUrls={gallery} columnCount="4" gap="35"/>
+    <Masonry imageUrls={gallery} columnCount="4" gap="40"/>
     </>
   )
 }

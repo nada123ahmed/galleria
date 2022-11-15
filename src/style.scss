@@ -68,7 +68,7 @@ img {
     display: block;
     cursor: pointer;
     transition: all .5s;
-
+    padding-bottom: 2.3rem;
     &:hover {
         opacity: .8;
     }
@@ -190,7 +190,8 @@ img {
 
 .masonry {
     columns: auto 4;
-    padding: 1.5rem;
+    padding: 2.5rem;
+    column-gap: 2.3rem;
     opacity: 0;
     animation: appear .5s forwards ease-in;
 }
@@ -315,7 +316,17 @@ img {
     font-weight: 700;
 }
 
-
+@keyframes appear {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 0.8;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 
 @media (min-width: 250px) and (max-width: 768px) {
     .masonry {
@@ -541,14 +552,3 @@ img {
 }
 
 
-@keyframes appear {
-    0% {
-      opacity: 0;
-    }
-    50% {
-      opacity: 0.8;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
