@@ -4,20 +4,18 @@ import {useLocation} from 'react-router-dom';
 import back from '../shared/icon-back-button.svg'
 import next from '../shared/icon-next-button.svg'
 import view from '../shared/icon-view-image.svg'
-import Header from '../components/Header'
 import gallery from '../data.json'
 import logo from '../shared/logo.svg';
-import {Link, useNavigate} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 function Slideshow() {
   const location = useLocation();
-  let myInterval
-
+ 
   const [art, setArt] = useState(location.state.art)
   const [progress, setProgress] = useState(Math.round((art.i / (gallery.length - 1)) * 100))
   const [data, setData] = useState({img: "", i: 0})
   const [slideshow, setSlideshow] = useState(location.state.slide)
   const [index, setIndex] = useState(art.i)
-
+  let myInterval
   const viewImage = (img, i) => {
     setData({img, i})
     document.body.style.overflowY = "hidden";
@@ -27,7 +25,6 @@ function Slideshow() {
     setData({img: "", i: 0})
     document.body.style.overflowY = "unset";
   }
-
   const action = (action) => {
    
    if(action === "next") {
@@ -58,27 +55,18 @@ function Slideshow() {
    }
   }
 
-
- 
   useEffect(() => {
     setArt({img:gallery[index], i:index})
   }, [index])
   useEffect(() => {
-
-  let initial = 5000 / 1000
-  let total = (initial * (gallery.length - 1)) 
   let index
-  let percent
   if(Math.round(progress) % 6 === 0) {
     index = (Math.floor(progress) * gallery.length)/ 100
     setIndex(Math.floor(index))
   } 
-  
     myInterval = setInterval(() => {
       if (slideshow) {
         setProgress(progress + .1)
-
-        
       } 
       if(Math.round(progress) === 101) {
        
@@ -97,14 +85,13 @@ function Slideshow() {
     setSlideshow(true)
     
   }
- 
 
   return (
     <>
     {data.img && 
       <section onClick={closeImage} className='overlay'>
         <section className='zoom-image'>
-          <img src={data.img.images.gallery}></img>
+          <img src={data.img.images.gallery} alt="art"></img>
           <span onClick={closeImage} className='close'>CLOSE</span>
         </section>
       </section>
@@ -120,7 +107,7 @@ function Slideshow() {
       <div className="image-container__image">
       <img src={art.img.images.hero.large}    ></img>
       <div onClick={() => viewImage(art.img, art.i)} className='view-image'>
-        <div><img src={view}></img></div>
+        <div><img src={view} alt="art"></img></div>
         <span>VIEW IMAGE</span>
       </div>
     
@@ -131,7 +118,7 @@ function Slideshow() {
         <p>{art.img.artist.name}</p>
         </div>
         <div className='artist'>
-          <img src={art.img.artist.image}></img>
+          <img src={art.img.artist.image} alt="artist"></img>
         </div>
       </div>
     </section>
@@ -151,8 +138,8 @@ function Slideshow() {
         <p>{art.img.artist.name}</p>
       </section>
       <section className='controls'>
-      <img className='button' onClick={() => action('previous')} src={back}></img>
-      <img className='button' onClick={() => action('next')} src={next}></img>
+      <img className='button' onClick={() => action('previous')} src={back} alt="click previous"></img>
+      <img className='button' onClick={() => action('next')} src={next} alt="click next"></img>
       </section>
     </section>
     </section>

@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+
 import './css.css'
 import {Link, useNavigate} from 'react-router-dom';
 function Masonry(props) {
@@ -18,7 +18,7 @@ function Masonry(props) {
     {props.imageUrls.map((img, i) => (
       <div onClick={() => viewImage(img, i)} key={i} className="image" style={{padding:props.gap / 2}}>
         <div className='image-container'>
-      <img className='img' src={img.images.thumbnail}    ></img>
+      <img className='img' src={img.images.thumbnail} alt="thumbnail"   ></img>
       <div className='caption'>
         <h2>{img.name}</h2>
         <p>{img.artist.name}</p>
