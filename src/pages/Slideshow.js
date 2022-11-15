@@ -15,13 +15,13 @@ function Slideshow() {
   const [data, setData] = useState({img: "", i: 0})
   const [slideshow, setSlideshow] = useState(location.state.slide)
   const [index, setIndex] = useState(art.i)
-  let myInterval
+ 
   const viewImage = (img, i) => {
     setData({img, i})
     document.body.style.overflowY = "hidden";
     setSlideshow(false)
   }
-  const closeImage = () => {
+  const closeImage = (e) => {
     setData({img: "", i: 0})
     document.body.style.overflowY = "unset";
   }
@@ -59,6 +59,7 @@ function Slideshow() {
     setArt({img:gallery[index], i:index})
   }, [index])
   useEffect(() => {
+    let myInterval
   let index
   if(Math.round(progress) % 6 === 0) {
     index = (Math.floor(progress) * gallery.length)/ 100
@@ -79,7 +80,7 @@ function Slideshow() {
     return () => {
       clearInterval(myInterval)
     }
-  })
+  },[progress, slideshow])
   const slide = (e) => {
     e.preventDefault()
     setSlideshow(true)
@@ -100,12 +101,12 @@ function Slideshow() {
         <Link to ='/'><img src={logo} alt="logo"></img></Link>
         <a onClick={slide} href='/slideshow'>START SLIDESHOW</a>
     </header>
-    <section >
+    <section className='slideshow' >
       
     <section className='slideshow-container'>
       <section className='image-container'>
       <div className="image-container__image">
-      <img src={art.img.images.hero.large}    ></img>
+      <img src={art.img.images.hero.large} alt="art"   ></img>
       <div onClick={() => viewImage(art.img, art.i)} className='view-image'>
         <div><img src={view} alt="art"></img></div>
         <span>VIEW IMAGE</span>

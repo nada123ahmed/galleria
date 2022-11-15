@@ -7,6 +7,11 @@
   font-family: 'Libre Baskerville', serif;
 }
 
+body {
+  transition: all .5s;
+
+}
+
 p {
   color: #7D7D7D;
 }
@@ -88,6 +93,9 @@ img {
   padding: 6rem 3rem;
   gap: 25%;
   margin-bottom: 6rem;
+  opacity: 0;
+  animation: appear .5s forwards ease-in;
+  transition: all 5s;
 }
 
 .slideshow-container p {
@@ -120,7 +128,7 @@ img {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
+  z-index: 5;
 }
 
 .year {
@@ -229,16 +237,19 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: all 5s;
+  opacity: 0;
   z-index: 500;
   padding: 2rem 0;
+  animation: appear .2s ease-in forwards;
+
+
 }
 
 .zoom-image {
   display: flex;
   position: relative;
   max-height: 90%;
-
+  max-width: 90%;
 }
 
 .close {
@@ -267,7 +278,13 @@ img {
 .masonry {
   columns: auto 4;
   padding: 1rem;
+  opacity: 0;
+  animation: appear .5s forwards ease-in;
+}
 
+header {
+  opacity: 0;
+  animation: appear .5s forwards ease-in;
 }
 
 .progress__filled {
@@ -277,6 +294,7 @@ img {
   flex-basis: 0%;
   transition: all .5s;
 }
+
 @media (min-width: 250px) and (max-width: 768px) {
   .masonry {
     columns: auto 1;
@@ -290,28 +308,35 @@ img {
     padding: 1.5rem;
     padding-bottom: 4rem;
     overflow-x: hidden;
+
   }
+
   .zoom-image {
     max-width: 90%;
   }
+
   .close {
     top: -15%;
     font-size: .8rem;
   }
+
   .image-container .image-container__caption h2 {
     min-width: unset;
   }
+
   .image-container {
     display: flex;
     flex-direction: column;
   }
+
   .slideshow-container .image-container__caption {
-    
+
     display: flex;
     gap: .5rem;
     flex-direction: column;
     top: -5rem;
   }
+
   .image-container__image {
     width: 100%;
   }
@@ -341,29 +366,34 @@ img {
   }
 
   .artist {
-    
+
     margin: 0;
     position: relative;
     width: 4rem;
     bottom: 0;
     left: 1rem;
   }
+
   .year {
     font-size: 6.5rem;
     left: 5rem;
     top: -5rem;
   }
+
   .progress-container {
     padding: 1rem 1.5rem;
   }
+
   .slide-name h4 {
     font-size: .9rem;
     font-weight: 700;
   }
+
   .slide-name p {
     font-size: .8rem;
-  
+
   }
+
   .description {
     padding: 0;
     gap: 4rem;
@@ -388,31 +418,36 @@ img {
     columns: auto 2;
     padding: 2rem;
   }
-  
- .slideshow-container {
-  flex-direction: column;
-  margin: 0;
-  padding-bottom: 4rem;
-  gap: 2rem;
- }
- .image-container__caption .text {
-  left: -16rem;
-  top: -.5rem;
- }
- .image-container .image-container__caption h2 {
-  font-weight: 700;
-  font-size: 3.6rem;
-  min-width: 25rem
- }
- .artist {
-  width: 10wrem;
-  bottom: 43%;
- }
- .description {
-  padding-left: 8rem;
-  font-weight: 700;
-  gap: 3rem;
- }
+
+  .slideshow-container {
+    flex-direction: column;
+    margin: 0;
+    padding-bottom: 4rem;
+    gap: 2rem;
+  }
+
+  .image-container__caption .text {
+    left: -16rem;
+    top: -.5rem;
+  }
+
+  .image-container .image-container__caption h2 {
+    font-weight: 700;
+    font-size: 3.6rem;
+    min-width: 25rem
+  }
+
+  .artist {
+    width: 10wrem;
+    bottom: 43%;
+  }
+
+  .description {
+    padding-left: 8rem;
+    font-weight: 700;
+    gap: 3rem;
+  }
+
   header {
     margin: 0;
     padding: 2rem 2.5rem;
@@ -426,36 +461,42 @@ img {
     width: 80%;
   }
 }
+
 @media (min-width: 1001px) and (max-width: 1450px) {
   .masonry {
     columns: auto 3;
     padding: 2rem;
   }
-  
- .slideshow-container {
-  flex-direction: column;
-  margin: 0;
-  padding-bottom: 4rem;
-  gap: 2rem;
- }
- .image-container__caption .text {
-  left: -16rem;
-  top: -.5rem;
- }
- .image-container .image-container__caption h2 {
-  font-weight: 700;
-  font-size: 3.6rem;
-  min-width: 25rem
- }
- .artist {
-  width: 10wrem;
-  bottom: 43%;
- }
- .description {
-  padding-left: 8rem;
-  font-weight: 700;
-  gap: 3rem;
- }
+
+  .slideshow-container {
+    flex-direction: column;
+    margin: 0;
+    padding-bottom: 4rem;
+    gap: 2rem;
+  }
+
+  .image-container__caption .text {
+    left: -16rem;
+    top: -.5rem;
+  }
+
+  .image-container .image-container__caption h2 {
+    font-weight: 700;
+    font-size: 3.6rem;
+    min-width: 25rem
+  }
+
+  .artist {
+    width: 10wrem;
+    bottom: 43%;
+  }
+
+  .description {
+    padding-left: 8rem;
+    font-weight: 700;
+    gap: 3rem;
+  }
+
   header {
     margin: 0;
     padding: 2rem 2.5rem;
@@ -468,10 +509,25 @@ img {
   header img {
     width: 80%;
   }
+
   .slide-name h4 {
     font-size: 1.3rem;
   }
+
   .slide-name p {
     font-size: 1rem;
+  }
+}
+
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
   }
 }

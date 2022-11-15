@@ -1,6 +1,6 @@
 
 import './css.css'
-import {Link, useNavigate} from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 function Masonry(props) {
   const navigate = useNavigate();
   const viewImage = (img, i) => {
