@@ -20,9 +20,8 @@ Users should be able to:
 
 ### Built with
 
-- React
-- SASS
 - [React](https://reactjs.org/) - JS library
+- SASS
 
 
 ### What I learned
@@ -38,6 +37,6 @@ I would want to make it possible for a user prepare their own slideshows
 
 - Website - [nessi](nessi.dev)
 - Frontend Mentor - [@Abrosss](https://www.frontendmentor.io/profile/Abrosss)
-- Twitter - [@yourusername](https://www.twitter.com/@ronessu)
+- Twitter - [@ronessu](https://www.twitter.com/@ronessu)
 
 
