@@ -6,17 +6,21 @@
   box-sizing: border-box;
   font-family: 'Libre Baskerville', serif;
 }
+
 p {
   color: #7D7D7D;
 }
+
 .link {
   text-decoration: underline;
   color: #7D7D7D;
   font-size: .8rem;
 }
+
 .button {
   cursor: pointer;
 }
+
 figure {
   position: relative;
 }
@@ -27,21 +31,25 @@ figure {
   cursor: pointer;
   transition: all .5s;
 }
+
 .image:hover {
   opacity: .8;
 }
+
 .image-container {
   position: relative;
- 
+
 }
+
 .image-container::after {
   position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
-  
+
 }
+
 .caption {
   position: absolute;
   width: 100%;
@@ -52,23 +60,27 @@ figure {
   flex-direction: column;
   gap: .8rem;
 }
+
 .caption p {
   color: white;
   opacity: .8;
 }
+
 .img {
   max-width: 100%;
   max-height: 100%;
   object-fit: cover;
   position: relative;
-
-  filter:brightness(74%)
+  flex: 1;
+  filter: brightness(74%)
 }
+
 img {
   max-height: 100%;
-    max-width: 100%;
-    width: auto;
+  max-width: 100%;
+  width: auto;
 }
+
 .slideshow-container {
   width: 100%;
   height: 100%;
@@ -82,9 +94,11 @@ img {
 
   line-height: 2;
 }
+
 .image-container {
   display: flex;
 }
+
 .image-container__image {
   width: 32rem;
   display: flex;
@@ -98,15 +112,17 @@ img {
   bottom: -10%;
   margin-left: 1.5rem;
 }
+
 .description {
   position: relative;
   padding-top: 8rem;
   padding-right: 5rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-between ;
- 
+  justify-content: space-between;
+
 }
+
 .year {
   position: absolute;
   top: -1rem;
@@ -116,14 +132,16 @@ img {
   color: #F3F3F3;
   font-weight: 700;
 }
- .slideshow-container .image-container__caption {
+
+.slideshow-container .image-container__caption {
   padding: 0;
   padding-top: 0;
- position: relative;
- color: black;
- bottom: 0;
- 
+  position: relative;
+  color: black;
+  bottom: 0;
+
 }
+
 .image-container__caption .text {
   background-color: white;
   position: absolute;
@@ -137,13 +155,16 @@ img {
   padding-bottom: 3rem;
   padding-right: 0;
 }
+
 .image-container .image-container__caption h2 {
-min-width: 22rem;
+  min-width: 22rem;
   font-size: 3.2rem
 }
+
 .image-container .image-container__caption p {
   font-size: 1rem
 }
+
 .progress-container {
   width: 100%;
   display: flex;
@@ -152,26 +173,31 @@ min-width: 22rem;
   padding: 1.5rem 3rem;
   position: relative;
 }
+
 .slide-name {
   display: flex;
   flex-direction: column;
   gap: .5rem;
 }
-.slide-name p{
+
+.slide-name p {
   font-size: .9rem;
   color: black;
 }
+
 .controls {
   display: flex;
   gap: 4rem;
 }
+
 .controls img {
   width: 1.7rem;
   height: 1.7rem;
 }
+
 .view-image {
   position: absolute;
-  background-color: rgba(0, 0, 0,.7);
+  background-color: rgba(0, 0, 0, .7);
   padding: .9rem;
   display: flex;
   align-items: center;
@@ -180,15 +206,18 @@ min-width: 22rem;
   bottom: 5%;
   cursor: pointer;
 }
+
 .view-image img {
   max-width: 100%;
   max-height: 100%;
 }
+
 .view-image span {
   color: white;
   letter-spacing: 2px;
   font-size: .9rem;
 }
+
 .overlay {
   background-color: rgba(0, 0, 0, .8);
   position: fixed;
@@ -204,19 +233,23 @@ min-width: 22rem;
   z-index: 500;
   padding: 2rem 0;
 }
+
 .zoom-image {
   display: flex;
   position: relative;
   max-height: 90%;
 
 }
+
 .close {
   position: absolute;
   top: -5%;
   right: 0;
   color: white;
   cursor: pointer;
+  letter-spacing: 2px;
 }
+
 .progress {
   flex: 10;
   position: absolute;
@@ -227,8 +260,14 @@ min-width: 22rem;
   flex-basis: 100%;
   height: 1px;
   transition: height 0.3s;
-  background: rgba(0,0,0,0.1);
+  background: rgba(0, 0, 0, 0.1);
   cursor: ew-resize;
+}
+
+.masonry {
+  columns: auto 4;
+  padding: 1rem;
+
 }
 
 .progress__filled {
@@ -237,4 +276,110 @@ min-width: 22rem;
   flex: 0;
   flex-basis: 0%;
   transition: all .5s;
+}
+
+@media (max-width:801px) {
+  .masonry {
+    columns: auto 1;
+  }
+
+  .slideshow-container {
+    padding: 0;
+    flex-direction: column;
+    gap: 0rem;
+    margin: 0;
+    padding: 1.5rem;
+    padding-bottom: 4rem;
+    overflow-x: hidden;
+  }
+  .zoom-image {
+    max-width: 90%;
+  }
+  .close {
+    top: -15%;
+    font-size: .8rem;
+  }
+  .image-container .image-container__caption h2 {
+    min-width: unset;
+  }
+  .image-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .slideshow-container .image-container__caption {
+    
+    display: flex;
+    gap: .5rem;
+    flex-direction: column;
+    top: -5rem;
+  }
+  .image-container__image {
+    width: 100%;
+  }
+
+  .view-image {
+    top: 5%;
+    bottom: unset;
+  }
+
+  .image-container__caption .text {
+    gap: 0.1rem;
+    padding: 0;
+    padding: 1rem 2rem;
+    position: relative;
+    left: -.5rem;
+    padding-right: 0;
+    width: 88%;
+
+  }
+
+  .image-container__caption .text h2 {
+    font-size: 1.5rem;
+  }
+
+  .image-container__caption .text p {
+    font-size: .9rem;
+  }
+
+  .artist {
+    
+    margin: 0;
+    position: relative;
+    width: 4rem;
+    bottom: 0;
+    left: 1rem;
+  }
+  .year {
+    font-size: 6.5rem;
+    left: 5rem;
+    top: -5rem;
+  }
+  .progress-container {
+    padding: 1rem 1.5rem;
+  }
+  .slide-name h4 {
+    font-size: .9rem;
+    font-weight: 700;
+  }
+  .slide-name p {
+    font-size: .8rem;
+  
+  }
+  .description {
+    padding: 0;
+    gap: 4rem;
+  }
+
+  header {
+    margin: 0;
+    padding: 1rem 1.5rem;
+  }
+
+  header a {
+    font-size: .5rem;
+  }
+
+  header img {
+    width: 50%;
+  }
 }

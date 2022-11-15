@@ -14,7 +14,7 @@ function Masonry(props) {
   return (
     <>
     
-    <div style={{columns:props.columnCount, columnGap:0, padding:props.gap / 2}}>
+    <div className='masonry'>
     {props.imageUrls.map((img, i) => (
       <div onClick={() => viewImage(img, i)} key={i} className="image" style={{padding:props.gap / 2}}>
         <div className='image-container'>
