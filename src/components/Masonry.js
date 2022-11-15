@@ -1,5 +1,5 @@
 
-import './css.css'
+
 import {useNavigate} from 'react-router-dom';
 function Masonry(props) {
   const navigate = useNavigate();
