@@ -176,7 +176,7 @@ img {
 .masonry {
   -moz-columns: auto 4;
        columns: auto 4;
-  padding: 1rem;
+  padding: 1.5rem;
   opacity: 0;
   -webkit-animation: appear 0.5s forwards ease-in;
           animation: appear 0.5s forwards ease-in;
