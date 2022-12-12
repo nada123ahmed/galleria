@@ -30,7 +30,7 @@ The masonry was definitely a challenge for me. I've learned a lot about it thank
 
 ### Continued development
 
-I would want to make it possible for a user prepare their own slideshows
+I would want to make it possible for a user prepare their own slideshows. UPDATE: [expanded version](https://github.com/Abrosss/galleria-expanded)
 
 
 ## Author
